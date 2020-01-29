@@ -1,38 +1,50 @@
 import React from 'react';
-import Amplify, { Auth } from 'aws-amplify';
-import { withAuthenticator } from 'aws-amplify-react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Authenticator } from 'aws-amplify-react';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
 
-import awsconfig from '../../aws-exports';
-import Home from '../home';
+import Books from '../books';
+import Home from '../dashboard';
 
-Amplify.configure(awsconfig);
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <Authenticator>
+      <Router>
+        <Layout>
+          <Header>
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={['dashboard']}
+              style={{ lineHeight: '64px' }}
+            >
+              <Menu.Item key="dashboard">
+                Dashboard
+                <Link to={'/'} />
+              </Menu.Item>
+              <Menu.Item key="books">
+                Books
+                <Link to={'/books'} />
+              </Menu.Item>
+            </Menu>
+          </Header>
+          <Content style={{ padding: '0 50px' }}>
+            <Switch>
+              <Route exact={true} path="/">
+                <Home />
+              </Route>
+              <Route path="/books">
+                <Books />
+              </Route>
+            </Switch>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>Readmore by Somo</Footer>
+        </Layout>
+      </Router>
+    </Authenticator>
   );
 };
 
-const SignIn = () => {
-  return <button onClick={() => (Auth as any).federatedSignIn({ provider: 'Google' })}>Open Google</button>;
-};
-
-export default withAuthenticator(App, true, [
-  <SignIn />
-]);
+export default App;

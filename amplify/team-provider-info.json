@@ -10,6 +10,16 @@
             "StackName": "amplify-readmore-dev-202157",
             "StackId": "arn:aws:cloudformation:eu-west-2:417131697419:stack/amplify-readmore-dev-202157/0baa0320-42d5-11ea-8a99-02ea235e602c",
             "AmplifyAppId": "d3kl7f4h15fzmr"
+        },
+        "categories": {
+            "function": {
+                "readmore1227ba7dPreSignup": {
+                    "DOMAINWHITELIST": "somoglobal.com"
+                }
+            },
+            "auth": {
+                "readmore1227ba7d": {}
+            }
         }
     }
 }
