@@ -1,15 +1,15 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-readmore-dev-74751-authRole",
-            "UnauthRoleArn": "arn:aws:iam::417131697419:role/amplify-readmore-dev-74751-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::417131697419:role/amplify-readmore-dev-74751-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-readmore-dev-74751-deployment",
-            "UnauthRoleName": "amplify-readmore-dev-74751-unauthRole",
-            "StackName": "amplify-readmore-dev-74751",
-            "StackId": "arn:aws:cloudformation:us-east-1:417131697419:stack/amplify-readmore-dev-74751/a839de00-426b-11ea-bcaf-1221171ce649",
-            "AmplifyAppId": "d2f99c7zszeuk9"
+            "AuthRoleName": "amplify-readmore-dev-202157-authRole",
+            "UnauthRoleArn": "arn:aws:iam::417131697419:role/amplify-readmore-dev-202157-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::417131697419:role/amplify-readmore-dev-202157-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-readmore-dev-202157-deployment",
+            "UnauthRoleName": "amplify-readmore-dev-202157-unauthRole",
+            "StackName": "amplify-readmore-dev-202157",
+            "StackId": "arn:aws:cloudformation:eu-west-2:417131697419:stack/amplify-readmore-dev-202157/0baa0320-42d5-11ea-8a99-02ea235e602c",
+            "AmplifyAppId": "d3kl7f4h15fzmr"
         }
     }
 }
