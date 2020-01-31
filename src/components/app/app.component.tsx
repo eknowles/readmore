@@ -1,6 +1,6 @@
 import React from 'react';
 import { Authenticator } from 'aws-amplify-react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
 import Books from '../books';

@@ -1,0 +1,39 @@
+type Book
+@model(subscriptions: { level: public })
+@auth(rules: [{ allow: owner, operations: [update, delete] }])
+@searchable
+{
+    id: ID!
+    author: String!
+    title: String!
+    about: String
+    thumbnailUrl: String
+    loans: [Loan] @connection(name: "BookLoans")
+    owner: Profile! @connection(name: "ProfileBooks")
+}
+
+type Loan
+@auth(rules: [{ allow: owner, operations: [update, delete] }])
+@model
+{
+    id: ID!
+    book: Book! @connection(name: "BookLoans")
+    borrower: Profile! @connection(name: "ProfileLoans")
+    start: String!
+    end: String
+}
+
+type Profile
+@model
+@auth(rules: [
+    {
+        allow: owner,
+        operations: [update]
+    }
+]) {
+    id: ID!
+    displayName: String!
+    picture: String!
+    loans: [Loan]! @connection(name: "ProfileLoans")
+    books: [Book]! @connection(name: "ProfileBooks")
+}
