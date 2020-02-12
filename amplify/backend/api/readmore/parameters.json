@@ -1,10 +1,10 @@
 {
-    "AppSyncApiName": "readmoreApi",
+    "AppSyncApiName": "readmore",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authreadmore1227ba7d",
+            "authreadmore4b71a7e2",
             "Outputs.UserPoolId"
         ]
     }

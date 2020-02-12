@@ -1,10 +1,10 @@
 {
-    "identityPoolName": "readmore1227ba7d_identitypool_1227ba7d",
+    "identityPoolName": "readmore4b71a7e2_identitypool_4b71a7e2",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "readmo1227ba7d",
-    "userPoolName": "readmore1227ba7d_userpool_1227ba7d",
+    "resourceNameTruncated": "readmo4b71a7e2",
+    "userPoolName": "readmore4b71a7e2_userpool_4b71a7e2",
     "autoVerifiedAttributes": [
-        "phone_number"
+        "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "readmo1227ba7d_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "readmo4b71a7e2_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "readmore1227ba7d",
+    "resourceName": "readmore4b71a7e2",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -44,26 +44,17 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
-    "hostedUI": false,
-    "triggers": "{\"PreSignup\":[\"email-filter-whitelist\"]}",
-    "userPoolGroupList": [],
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "readmore1227ba7dPreSignup",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
+    "usernameAttributes": [
+        "email"
     ],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false
+    "hostedUIDomainName": "readmore",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+    "userPoolGroupList": [],
+    "dependsOn": []
 }

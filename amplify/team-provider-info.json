@@ -13,12 +13,15 @@
         },
         "categories": {
             "function": {
-                "readmore1227ba7dPreSignup": {
+                "readmoreauthPreSignup": {
                     "DOMAINWHITELIST": "somoglobal.com"
                 }
             },
             "auth": {
-                "readmore1227ba7d": {}
+                "readmoreauth": {},
+                "readmore4b71a7e2": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"380686949659-1o9se7c7i9knbb1fbkd2as9c83vvsfie.apps.googleusercontent.com\",\"client_secret\":\"D3UQvvJzrZphHP4YGLasKm38\"}]"
+                }
             }
         }
     }
